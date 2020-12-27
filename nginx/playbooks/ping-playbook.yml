@@ -1,0 +1,29 @@
+---
+- hosts: ubuntu-vm
+  gather_facts: true
+  tasks:
+    - name: pinging machine
+      ping:
+      retries: 10
+      delay: 5
+- hosts: ubuntu-vm2
+  tasks:
+    - name: Update repositories cache and install "nginx" package
+      become: yes
+      apt:
+        name: nginx
+        update_cache: yes
+    - name: Install nginx web server
+      become: yes
+      apt: name=nginx state=present
+- hosts: ubuntu-vm2
+  become: true
+  vars:
+    jenkins_hostname: localhost
+    java_packages:
+      - openjdk-8-jdk
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkins
+    - role: geerlingguy.elasticsearch
+    - role: geerlingguy.kibana

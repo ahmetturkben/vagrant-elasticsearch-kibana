@@ -1,0 +1,3 @@
+- name: Install jobs.
+  include: add_job.yml
+  with_items: "{{ jenkins_jobs }}"

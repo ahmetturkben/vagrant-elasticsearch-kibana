@@ -1,0 +1,7 @@
+- name: Install CloudBees Folder for {{ item }}
+  jenkins_job:
+    config: "{{ lookup('template', 'config.xml.j2') }}"
+    name: {{ item }}
+    password: "{{ jenkins_admin_password }}"
+    url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}"
+    user: "{{ jenkins_admin_username }}"

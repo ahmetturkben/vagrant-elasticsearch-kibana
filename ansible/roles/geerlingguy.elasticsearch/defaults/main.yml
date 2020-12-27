@@ -1,0 +1,14 @@
+---
+elasticsearch_version: '7.x'
+elasticsearch_package_state: latest
+
+elasticsearch_service_state: started
+elasticsearch_service_enabled: true
+
+elasticsearch_network_host: 192.168.33.20
+elasticsearch_http_port: 9200
+
+elasticsearch_heap_size_min: 1g
+elasticsearch_heap_size_max: 1g
+
+elasticsearch_extra_options: 'discovery.type: single-node'

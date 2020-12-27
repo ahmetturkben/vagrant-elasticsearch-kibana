@@ -1,0 +1,9 @@
+[ubuntu-vm]
+192.168.33.10
+
+[ubuntu-vm2]
+192.168.33.20 ansible_ssh_port=22
+
+[all:vars]
+ansible_ssh_user=vagrant
+ansible_python_interpreter=/usr/bin/python
