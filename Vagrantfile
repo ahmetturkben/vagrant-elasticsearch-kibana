@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
 	vm2.vm.box_version = "1.0.0"
 	vm2.ssh.insert_key = false  
 	vm2.vm.hostname = "ubuntu-vm2"
-	vm2.vm.box = "gsengun/ubuntu-bare-box-1804"
+	vm2.vm.box = "trusty64"
 	vm2.vm.network 'private_network', ip: '192.168.33.20'
 	vm2.vm.provider "virtualbox" do |vb|
 		vb.name = "ubuntu-vm2"
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
   	vm1.vm.box_version = "1.0.0"
 	vm1.ssh.insert_key = false 
 	vm1.vm.hostname = "ubuntu-vm"
-	vm1.vm.box = "gsengun/ubuntu-bare-box-1804"
+	vm1.vm.box = "trusty64"
 	vm1.vm.network 'private_network', ip: '192.168.33.10'
 	vm1.vm.provider "virtualbox" do |vb|
 		vb.name = "ubuntu-vm"
